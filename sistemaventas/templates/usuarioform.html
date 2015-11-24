@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block header %}
+	<h1 align="center"><strong>Usuarios</strong></h1>
+{% endblock %}
+{% block contenido %}
+	<div class="panel panel-default" style="width: 80%; overflow:hidden">
+		<div class="panel-body" style="float:left; width: 40%;">
+			<form id='formulario' class="form-group" method='post' enctype='multipart/form-data' action=''>
+				{% csrf_token %} 
+				<fieldset>
+					<legend>Registrar Usuario</legend>
+					<div class="form-group">
+						{{formulario.as_p}}
+				    </div>
+				</fieldset>
+				<div class="form-group">
+				    <div class="col-lg-10 col-lg-offset-2">
+				        <button type="reset" class="btn btn-default">Cancelar</button>
+					    <button type="submit" class="btn btn-primary">Registrar</button>
+				    </div>
+				</div>
+			</form>
+		</div>
+
+		<!--<div class="panel-body" style="float:left; width: 40%;">
+			<form id='formulario' class="form-group" method='post' enctype='multipart/form-data' action=''>
+				{% csrf_token %} 
+				<fieldset>
+					<legend>Iniciar Sesion</legend>
+					<div class="form-group">
+						{{formulario.as_p}}
+				    </div>
+				</fieldset>
+				<div class="form-group">
+				    <div class="col-lg-10 col-lg-offset-2">
+				        <button type="reset" class="btn btn-default">Cancelar</button>
+					    <button type="submit" class="btn btn-primary">Ingresar</button>
+				    </div>
+				</div>
+			</form>
+
+			<a href="URL-FACEBOOK" target="_blank"><img alt="siguenos en facebook" height="32" src="http://1.bp.blogspot.com/-PrByV4NBlSs/UiXnD1FEFnI/AAAAAAAABws/dUhvcAdYRiY/s1600/Facebook+alt+1.png" title="siguenos en facebook" width="32" /></a>
+			<a href="URL-Google+" target="_blank"><img alt="siguenos en Google+" height="32" src="http://3.bp.blogspot.com/-fnL839vxuao/UiXnFfyN17I/AAAAAAAABxc/VvcXJlZ65Ko/s1600/Google%252B+alt.png" title="siguenos en Google+" width="32" /></a>
+			<a href="URL-Twitter" target="_blank"><img alt="siguenos en Twitter" height="32" src="http://1.bp.blogspot.com/-7BdDTcxhdi8/UiXnHrEjOqI/AAAAAAAAByU/2nzkRxah3X8/s1600/Twitter+alt+4.png" title="siguenos en Twitter" width="32" /></a>
+		</div>-->
+
+	</div>
+		
+	
+
+{% endblock %}

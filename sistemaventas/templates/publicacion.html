@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block header %}
+	<h1 align="center"><strong>Publicaciones</strong></h1>
+{% endblock %}
+{% block contenido %}
+<h1 align="center"><strong>Detalles de la publicación</strong></h1>
+<div class="panel panel-primary" style="width: 100%; overflow:hidden">
+	<div class="panel-heading">
+	   	<h1 class="panel-title">Detalles</h1>
+	</div>
+	<div class="" style="float:left; width: 350px;">
+		<!--<div class="panel-heading">
+	    	<h1 class="panel-title">{{publicacion.titulo}}</h1>
+	  	</div>-->
+	  	<div class="list-group-item">
+	    	<h4 class="list-group-item-heading">Titulo</h4>
+	    	<p class="list-group-item-text lead"><h1 class="panel-title">{{publicacion.titulo}}</h1></p>
+	  	</div>
+	  	<div class="list-group-item">
+	    	<h4 class="list-group-item-heading">Descripción</h4>
+	    	<p class="list-group-item-text lead"><small>{{publicacion.descripcion}}</small></p>
+	  	</div>
+	  	<div class="list-group-item">
+	    	<h4 class="list-group-item-heading">Precio</h4>
+	    	<p class="list-group-item-text">{{publicacion.precio}}</p>
+	  	</div>
+	  	<div class="list-group-item">
+	    	<h4 class="list-group-item-heading">Marca</h4>
+	    	<p class="list-group-item-text">{{publicacion.marca}} - {{publicacion.modelo}}</p>
+	  	</div>
+	  	<div class="list-group-item">
+	    	<h4 class="list-group-item-heading">Ubicación</h4>
+	    	<p class="list-group-item-text">{{publicacion.ubicacion}}</p>
+	  	</div>
+	  	<div class="list-group-item">
+	    	<h4 class="list-group-item-heading">Fecha de publicación</h4>
+	    	<p class="list-group-item-text">{{publicacion.fecha_pu}}</p>
+	  	</div>
+	  	<div class="list-group-item">
+	    	<h4 class="list-group-item-heading">Usuario</h4>
+	    	<p class="list-group-item-text">{{publicacion.usuario}}</p>
+	  	</div>
+	</div>
+
+	<div  style="float:left; width: 400px;">
+    	<img src="/static/{{ publicacion.imagen }}" class="media img-responsive img-thumbnail" alt=""/>
+  	</div>
+</div>
+	<p><a href=""> Nuevo Comentario</a></p>
+	<div class="panel panel-primary" style="width: 100%; overflow:hidden">
+		<div class="panel-heading">
+	   		<h1 class="panel-title">Comentarios</h1>
+		</div>
+		<div class="list-group-item">
+			{% for item in comentarios %}
+				<p>{{item.titulo}}</p>
+				{% if comentario %}
+					<p>Comentarios:</p>
+				{% endif %}
+	   		<h4 class="list-group-item-heading">Titulo</h4>
+	   		<p class="list-group-item-text lead"><h1 class="panel-title">{{publicacion.titulo}}</h1></p>
+	   		<ul>
+				{% for comen in comentario %}
+					<li>{{ comen.fechacreacion }} - {{ comen.autor }}</li>
+					<ul>
+						<li>{{ comen.mensaje }}</li>
+					</ul>
+				{% endfor %}
+			</ul>
+		{% empty%}
+			<p>No hay comentarios registrados.</p>
+	{% endfor %}
+		</div>
+	</div>
+
+
+	<blockquote>
+		<p>{{comentario.mensaje}}</p>
+	  	<small>Comentado por <cite title="Source Title">{{comentario.autor}}</cite></small>
+	</blockquote>
+
+	
+	
+
+
+{% endblock %}
+

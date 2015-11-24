@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static%}
+
+{% block contenido %}
+<div class="work_title">
+	<div class="work_nav">
+		<h1 class="tittle" style="background: rgba(255, 255, 255, 0.7) none repeat scroll 0% 0%;">
+			Publicaciones
+		</h1>
+	</div>
+	<!---<div class="">
+		<ul class="btn clearfix" style="float:none; margin-left: 10px;">
+			<li><a href="#" class="previous" data-title="Previous"></a></li>
+			<li><a href="/" class="grid" data-title="Portfolio"></a></li>
+			<li><a href="#" class="next" data-title="Next"></a></li>
+		</ul>							
+	</div><!-- end work_nav -->
+	<div class="">
+		<a href="/publicacion/nuevo" class="btn btn-success">Publicar</a>
+	</div>
+</div>
+	<div class="table-responsive">
+		<table class="table table-bordered table-striped">
+			<thead>
+			   	<tr align="center" valign="middle"> 
+			    	<th>N°</th>
+					<th>Titulo</th>
+					<th>Descripción</th>
+					<th colspan="2">Opciones</th>
+					<!--<th colspan="2" align="center">Opciones</th>-->
+			    </tr>
+			</thead>
+			{%for item in publicaciones %}
+			<tbody>
+			 	<tr class="active">
+			 		<td>{{item.id}}</td>
+				    <td><a action="/templates/publicacion.html" class="list-group-item active" href='/publicacion/{{item.id}}'>{{item.titulo}}</a></td>
+				    <td>{{item.descripcion}}</td>
+				    <td><a href="publicaciones/editar/{{item.id}}">Modificar</a></td>
+				    <td><a href="publicaciones/eliminar/{{item.id}}">Eliminar</a></td>
+				    <!--<td><a href="">Modificar</a></td>
+				    <td><a href="">Eliminar</a></td>-->
+			 	</tr>
+			</tbody>
+		{% endfor %}
+		</table>
+	</div>
+{% endblock %}

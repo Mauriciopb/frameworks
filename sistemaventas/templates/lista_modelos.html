@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static%}
+
+{% comment %} Lista de Marcas {% endcomment %}
+
+{% block contenido %}
+	<div class="work_title">
+		<div class="work_nav">
+			<h1 class="tittle" style="background: rgba(255, 255, 255, 0.7) none repeat scroll 0% 0%;">
+				Lista de modelos
+			</h1>
+		</div>
+		<div class="work_nav">
+			<ul class="btn clearfix" style="float:none; margin-left: 10px;">
+				<li><a href="#" class="previous" data-title="Previous"></a></li>
+				<li><a href="/" class="grid" data-title="Portfolio"></a></li>
+				<li><a href="#" class="next" data-title="Next"></a></li>
+			</ul>							
+		</div><!-- end work_nav -->
+		<div class="userinfo">
+			<div class="user">
+				<ul>
+					<li><a href="#"><img src="/static/img/user-pic.png" title="user-name" /><span>Ipsum</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="table-responsive">
+		<table class="table table-bordered table-striped">
+			<thead>
+			   	<tr align="center" valign="middle"> 
+			    	<th>N°</th>
+					<th>Nombre</th>
+					<th colspan="2" align="center">Opciones</th>
+			    </tr>
+			</thead>
+			{%for item in marcas %}
+			<tbody>
+			 	<tr class="active">
+			 		<td>{{item.id}}</td>
+				    <td><a href="">{{item.nombre}}</a></td>
+				    <td><a href="">Modificar</a></td>
+				    <td><a href="">Eliminar</a></td>
+			 	</tr>
+			</tbody>
+		{% endfor %}
+		</table>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>StorApp</title>
+	<meta charset="utf-8">
+	<meta name="author" content="pixelhint.com">
+	<meta name="description" content="Magnetic is a stunning responsive HTML5/CSS3 photography/portfolio website template"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<a href="index.html"><img src="/static/img/logo.png" title="Magnetic" alt="Magnetic"/></a>
+		</div><!-- end logo -->
+
+		<div id="menu_icon"></div>
+		<nav>
+			<ul style="margin-top: 48px; overflow: none;">
+				<li><a href="/" class="selected">Home</a></li>
+				<li><a href="/publicaciones">Publicaciones</a></li>
+				<li><a href="/marcas">Marcas</a></li>
+				<li><a href="contact.html">Contactenos</a></li>
+				<li><a href="/usuario/nuevo">Registrarse</a></li>
+			</ul>
+		</nav><!-- end navigation menu -->
+
+		<div class="footer clearfix" style="bottom: 30px;">
+			<ul class="social clearfix">
+				<li><a href="#" class="fb" data-title="Facebook"></a></li>
+				<li><a href="#" class="google" data-title="Google +"></a></li>
+				<li><a href="#" class="twitter" data-title="Twitter"></a></li>
+				<!--<li><a href="#" class="behance" data-title="Behance"></a></li>
+				<li><a href="#" class="dribble" data-title="Dribble"></a></li>
+				<li><a href="#" class="rss" data-title="RSS"></a></li>-->
+			</ul><!-- end social -->
+
+			<div class="rights">
+				<p>Copyright © 2014 publicapp.</p>
+				<p>Created by <a href="https://www.facebook.com/">Andŕes Mauricio Pinchao</a></p>
+			</div><!-- end rights -->
+		</div ><!-- end footer -->
+	</header><!-- end header -->
+	<section class="main clearfix">
+		{% block contenido %} {% endblock %}
+	</section>
+</body>
+</html>

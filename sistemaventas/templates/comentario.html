@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block header %}
+	<h1 align="center"><strong>Publicaciones</strong></h1>
+{% endblock %}
+{% block contenido %}
+	<div class="panel panel-primary" style="width: 100%; overflow:hidden">
+		<div class="panel-heading">
+	   		<h1 class="panel-title">Comentarios</h1>
+		</div>
+		<div class="list-group-item">
+			{% for item in comentarios %}
+				<p>{{item.titulo}}</p>
+				{% if comentario %}
+					<p>Comentarios:</p>
+				{% endif %}
+	   		<h4 class="list-group-item-heading">Titulo</h4>
+	   		<p class="list-group-item-text lead"><h1 class="panel-title">{{publicacion.titulo}}</h1></p>
+	   		<ul>
+				{% for comen in comentario %}
+					<li>{{ comen.fechacreacion }} - {{ comen.autor }}</li>
+					<ul>
+						<li>{{ comen.mensaje }}</li>
+					</ul>
+				{% endfor %}
+			</ul>
+		{% empty%}
+			<p>No hay comentarios registrados.</p>
+	{% endfor %}
+		</div>
+	</div>
+
+
+	<blockquote>
+		<p>{{comentario.mensaje}}</p>
+	  	<small>Comentado por <cite title="Source Title">{{comentario.autor}}</cite></small>
+	</blockquote>
+
+	<p>Nuevo Comentario</p>
+	<form id='formulario' class="form-group" method='post' enctype='multipart/form-data' action=''>{% csrf_token %}
+		<div class="form-group">
+			<label class="control-label" for="inputLarge">Escriba su comentario</label>
+			<!--<input class="form-control input-lg" type="text" id="inputLarge">-->
+			{{formulario.as_p}}
+		</div>
+		&nbsp;
+		<input type="submit" value="Enviar">
+	</form>
+
+	<hr width="100%"  color="#646464" size="1"/>
+
+
+{% endblock %}
